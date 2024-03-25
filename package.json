@@ -4,7 +4,7 @@
   "description": "eee?",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm start",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf dist && cd ../ejercicio5 && npm run build && cp -r dist ../ejercicioNode-1",
