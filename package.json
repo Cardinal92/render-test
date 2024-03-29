@@ -10,6 +10,9 @@
     "build:ui": "rm -rf dist && cd ../ejercicio5 && npm run build && cp -r dist ../ejercicioNode-1",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
+  "engines": {
+    "node": "21.7.1"
+  },
   "author": "yo",
   "license": "ISC",
   "dependencies": {
