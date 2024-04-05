@@ -11,7 +11,7 @@
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "engines": {
-    "node": "21.7.1"
+    "node": "20.12.1"
   },
   "author": "yo",
   "license": "ISC",
