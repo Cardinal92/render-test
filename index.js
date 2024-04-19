@@ -1,9 +1,23 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-app.use(express.json())
 app.use(cors())
 app.use(express.static("dist"))
+
+const mongoose = require("mongoose")
+const password = process.argv[2]
+const url =   `mongodb+srv://martinsito:${password}@cluster0.31pc8jn.mongodb.net/noteApp?
+retryWrites=true&w=majority&appName=Cluster0`
+
+mongoose.set("strictQuery", false)
+mongoose.connect(url)
+
+const noteSchema = new mongoose.Schema({
+  content: String,
+  important: Boolean,
+})
+
+const Notes = mongoose.model("Note", noteSchema)
 
 let notes = [
   {
@@ -28,7 +42,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/notes', (request, response) => {
-  response.json(notes)
+  Notes.finf({}).then(notes => {})
 })
 
 app.get("/api/notes/:id", (request, response) => {
